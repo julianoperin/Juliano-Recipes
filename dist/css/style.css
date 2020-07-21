@@ -312,7 +312,7 @@ body {
 .results__fig,
 .likes__fig {
   flex: 0 0 5.5rem;
-  border-radius: 50%;
+  border-radius: 3px;
   overflow: hidden;
   height: 5.5rem;
   margin-right: 2rem;
