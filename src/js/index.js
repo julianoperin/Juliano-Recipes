@@ -1,21 +1,32 @@
-import axios from "axios";
+import Search from "./models/Search";
 
-async function getResults(query) {
-  const APP_ID = "13231e53";
+//! Global State
+const state = {};
 
-  const KEY = "7e1a99ec4243020ada15269bce85b86b";
+const controlSearch = async () => {
+  // 1) Get the query from the view
+  const query = "chicken";
 
-  const URL = `https://api.edamam.com/search?q=${query}&app_id=${APP_ID}&app_key=${KEY}&from=0&to=30`;
+  if (query) {
+    // 2) New Search object and add to state
+    state.search = new Search(query);
 
-  //   "https://api.edamam.com/search?q=chicken&app_id=13231e53&app_key=7e1a99ec4243020ada15269bce85b86b&from=0&to=30"
+    //  3) Prepare Ui for results
 
-  try {
-    const res = await axios(URL);
-    const recipes = res.data;
-    console.log(recipes);
-  } catch (error) {
-    console.log(error);
+    //  4) Search for recipes
+    await state.search.getResults();
+
+    //  5) render results
+    console.log(state.search.result);
   }
-}
+};
 
-getResults("chicken");
+document.querySelector(".search").addEventListener("submit", (e) => {
+  e.preventDefault();
+  controlSearch();
+  console.log("clicked");
+});
+
+// const search = new Search("pizza");
+// console.log(search);
+// search.getResults();
