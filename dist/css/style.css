@@ -50,6 +50,10 @@ body {
   }
 }
 
+.search__btn {
+  border-radius: 0 4px 4px 0 !important;
+}
+
 .btn,
 .btn-small,
 .btn-small:link,
@@ -166,7 +170,16 @@ body {
   text-transform: uppercase;
   margin-bottom: 2.5rem;
   text-align: center;
-  transform: skewY(-3deg);
+  /* transform: skewY(-3deg); */
+}
+
+.fav {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: lightblue;
+  text-transform: uppercase;
+  margin-bottom: 2.5rem;
+  text-align: center;
 }
 
 .copyright {
@@ -216,7 +229,7 @@ body {
 
 .search {
   background-color: #fff;
-  border-radius: 10rem;
+  border-radius: 5px;
   display: flex;
   align-items: center;
   padding-left: 3rem;
@@ -226,6 +239,7 @@ body {
   transform: translateY(-2px);
   box-shadow: 0 0.7rem 3rem rgba(101, 90, 86, 0.08);
 }
+
 .search__field {
   border: none;
   background: none;
