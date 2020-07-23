@@ -1,4 +1,5 @@
 import axios from "axios";
+import { KEY } from "../config";
 
 export default class Search {
   constructor(query) {
@@ -9,13 +10,9 @@ export default class Search {
   // https://api.spoonacular.com/recipes/complexSearch?query=pasta&apiKey=10d488cf49f141da98241c0cf1c12cfc&number=30
 
   async getResults() {
-    const KEY = "10d488cf49f141da98241c0cf1c12cfc";
-
-    // const URL = `https://api.edamam.com/search?q=${this.query}&app_id=${APP_ID}&app_key=${KEY}&from=0&to=30`;
-
     const URL = `https://api.spoonacular.com/recipes/complexSearch?query=${this.query}&apiKey=${KEY}&number=30`;
 
-    //   "https://api.edamam.com/search?q=chicken&app_id=13231e53&app_key=7e1a99ec4243020ada15269bce85b86b&from=0&to=30"
+    // "https://api.spoonacular.com/recipes/${this.id}/information?apiKey=${KEY}"
 
     try {
       const res = await axios(URL);
