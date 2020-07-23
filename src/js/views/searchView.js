@@ -17,11 +17,11 @@ const renderRecipe = (recipe) => {
     <li>
         <a class="results__link" href="#23456">
             <figure class="results__fig">
-                <img src="${recipe.recipe.image}" alt="${recipe.recipe.label}">
+                <img src="${recipe.image}" alt="${recipe.title}">
             </figure>
             <div class="results__data">
-                <h4 class="results__name">${recipe.recipe.label}</h4>
-                <p class="results__author">${recipe.recipe.source}</p>
+                <h4 class="results__name">${recipe.title}</h4>
+                <p class="results__author"></p>
             </div>
         </a>
     </li>
@@ -29,6 +29,20 @@ const renderRecipe = (recipe) => {
   elements.searchResList.insertAdjacentHTML("beforeend", markup);
 };
 
-export const renderResults = (recipes) => {
-  recipes.forEach(renderRecipe);
+const renderButtons = (page, numResults, resPerPage) => {
+  const pages = Math.ceil(numResults / resPerPage);
+
+  if (page === 1 && pages > 1) {
+    // Only button to go to next page
+  } else if (page < pages) {
+    //Both buttons
+  } else if (page === pages && pages > 1) {
+    // Only button to go to prev page
+  }
+};
+
+export const renderResults = (recipes, page = 1, resPerPage = 10) => {
+  const start = (page - 1) * resPerPage;
+  const end = page * resPerPage;
+  recipes.slice(start, end).forEach(renderRecipe);
 };
