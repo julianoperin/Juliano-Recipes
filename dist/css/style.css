@@ -2,6 +2,7 @@
   margin: 0;
   padding: 0;
 }
+/* #F6F7F5 */
 
 *,
 *::before,
@@ -110,7 +111,7 @@ body {
   color: lightblue;
   font-size: 1.2rem;
   border: none;
-  background-color: #f9f5f3;
+  background-color: #f6f7f5;
   padding: 0.8rem 1.2rem;
   border-radius: 10rem;
   cursor: pointer;
@@ -178,7 +179,6 @@ body {
   font-weight: 600;
   color: lightblue;
   text-transform: uppercase;
-  margin-bottom: 2.5rem;
   text-align: center;
 }
 
@@ -216,7 +216,7 @@ body {
 
 .header {
   grid-area: head;
-  background-color: #f9f5f3;
+  background-color: #f6f7f5;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -303,25 +303,26 @@ body {
 .likes__list {
   list-style: none;
 }
+
 .results__link:link,
 .results__link:visited,
 .likes__link:link,
 .likes__link:visited {
   display: flex;
   align-items: center;
-  padding: 1.5rem 3rem;
+  padding: 1rem 0.8rem 1rem 1.5rem;
   transition: all 0.3s;
   border-right: 1px solid #fff;
   text-decoration: none;
 }
 .results__link:hover,
 .likes__link:hover {
-  background-color: #f9f5f3;
+  background-color: #f6f7f5;
   transform: translateY(-2px);
 }
 .results__link--active,
 .likes__link--active {
-  background-color: #f9f5f3;
+  background-color: #f6f7f5;
 }
 .results__fig,
 .likes__fig {
@@ -342,7 +343,7 @@ body {
   position: absolute;
   top: 0;
   left: 0;
-  background-image: linear-gradient(to right bottom, #fbdb89, lightskyblue);
+  /* background-image: linear-gradient(to right bottom, #fbdb89, lightskyblue); */
   opacity: 0.4;
 }
 .results__fig img,
@@ -356,7 +357,7 @@ body {
 .results__name,
 .likes__name {
   font-size: 1.3rem;
-  color: lightblue;
+  color: black;
   text-transform: uppercase;
   font-weight: 600;
   margin-bottom: 0.3rem;
@@ -390,7 +391,7 @@ body {
 }
 
 .recipe {
-  background-color: #f9f5f3;
+  background-color: #f6f7f5;
   border-top: 1px solid #fff;
 }
 .recipe__fig {
@@ -407,7 +408,7 @@ body {
   position: absolute;
   top: 0;
   left: 0;
-  background-image: linear-gradient(to right bottom, #fbdb89, lightskyblue);
+  /* background-image: linear-gradient(to right bottom, #fbdb89, lightskyblue); */
   opacity: 0.6;
 }
 .recipe__img {
@@ -500,7 +501,7 @@ body {
   padding: 4rem 5rem;
   font-size: 1.5rem;
   line-height: 1.4;
-  background-color: #f2efee;
+  background-color: #f6f7f5;
   display: flex;
   flex-direction: column;
   align-items: center;
