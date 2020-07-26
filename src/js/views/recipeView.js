@@ -75,7 +75,11 @@ export const renderRecipe = (recipe) => {
     <div class="recipe__directions">
         <h2 class="heading-2">Instructions</h2>
         <p class="recipe__directions-text">
-            ${recipe.instructions}
+            ${
+              recipe.instructions
+                ? recipe.instructions
+                : "There are no instructions for this recipe, try the button bellow for more information."
+            }
         </p>
         <a class="btn-small recipe__btn" href="${
           recipe.sourceUrl

@@ -13,6 +13,18 @@ export const clearResults = () => {
   elements.searchResPages.innerHTML = "";
 };
 
+//! Keep the item selected
+export const highlightSelected = (id) => {
+  const resultArr = Array.from(document.querySelectorAll(".results__link"));
+  resultArr.forEach((item) => {
+    item.classList.remove("results__link--active");
+  });
+
+  document
+    .querySelector(`a[href="#${id}"]`)
+    .classList.add("results__link--active");
+};
+
 const renderRecipe = (recipe) => {
   const markup = `
     <li>
