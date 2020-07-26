@@ -439,7 +439,7 @@ body {
 .recipe__details {
   display: flex;
   align-items: center;
-  padding: 8rem 3rem 3rem 3rem;
+  padding: 3rem 3rem 0.5rem 3rem;
 }
 .recipe__info {
   font-size: 1.5rem;
@@ -498,7 +498,7 @@ body {
   fill: #fff;
 }
 .recipe__ingredients {
-  padding: 4rem 5rem;
+  padding: 2rem 3rem;
   font-size: 1.5rem;
   line-height: 1.4;
   background-color: #f6f7f5;
@@ -533,7 +533,7 @@ body {
   flex: 0 0 auto;
 }
 .recipe__directions {
-  padding: 4rem;
+  padding: 0rem 1.5rem 0rem 1.5rem;
   padding-bottom: 5rem;
   display: flex;
   flex-direction: column;
