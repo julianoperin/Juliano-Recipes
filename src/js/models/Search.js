@@ -1,5 +1,5 @@
 import axios from "axios";
-import { KEY } from "../config";
+import { KEYH } from "../config";
 
 export default class Search {
   constructor(query) {
@@ -10,7 +10,7 @@ export default class Search {
   // https://api.spoonacular.com/recipes/complexSearch?query=pasta&apiKey=10d488cf49f141da98241c0cf1c12cfc&number=30
 
   async getResults() {
-    const URL = `https://api.spoonacular.com/recipes/complexSearch?query=${this.query}&apiKey=${KEY}&number=30`;
+    const URL = `https://api.spoonacular.com/recipes/complexSearch?query=${this.query}&apiKey=${KEYH}&number=30`;
 
     // "https://api.spoonacular.com/recipes/${this.id}/information?apiKey=${KEY}"
 

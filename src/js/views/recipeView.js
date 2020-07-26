@@ -2,6 +2,7 @@ import { elements } from "./base";
 
 export const clearRecipe = () => {
   elements.recipe.innerHTML = "";
+  elements.shopping.innerHTML = "";
 };
 
 const createIngredient = (ingredient) => `
@@ -18,6 +19,7 @@ const createIngredient = (ingredient) => `
 `;
 
 export const renderRecipe = (recipe) => {
+  let price = Math.trunc(recipe.pricePerServing / 2.5);
   const markup = `
         <figure class="recipe__fig">
         <img src="${recipe.image}" alt="${recipe.title}" class="recipe__img">
@@ -43,27 +45,20 @@ export const renderRecipe = (recipe) => {
               recipe.servings
             }</span>
             <span class="recipe__info-text"> servings</span>
-
-            <div class="recipe__info-buttons">
-                <button class="btn-tiny">
-                    <svg>
-                        <use href="img/icons.svg#icon-circle-with-minus"></use>
-                    </svg>
-                </button>
-                <button class="btn-tiny">
-                    <svg>
-                        <use href="img/icons.svg#icon-circle-with-plus"></use>
-                    </svg>
-                </button>
-            </div>
-
         </div>
-        <button class="recipe__love">
-            <svg class="header__likes">
-                <use href="img/icons.svg#icon-heart-outlined"></use>
-            </svg>
-        </button>
-    </div>
+
+        <div class="recipe__info">
+            <i class="fas fa-dollar-sign"></i>
+            <span class="recipe__info-data recipe__info-data--people">&nbsp;${price}</span>
+            <span class="recipe__info-text"> per servings</span>
+        </div>
+
+            <button class="recipe__love">
+                <svg class="header__likes">
+                    <use href="img/icons.svg#icon-heart-outlined"></use>
+                </svg>
+            </button>
+        </div>
 
 
 
@@ -84,9 +79,31 @@ export const renderRecipe = (recipe) => {
         <a class="btn-small recipe__btn" href="${
           recipe.sourceUrl
         }" target="_blank">
-            <span>Check more about ${recipe.title}</span>
+            <span>Check more from ${recipe.sourceName}</span>
         </a>
     </div>
     `;
   elements.recipe.insertAdjacentHTML("afterbegin", markup);
+
+  const markup2 = `
+  <div class="recipe__directions">
+    <h2 class="heading-2">Summary</h2>
+        <p class="recipe__directions-text">
+            ${
+              recipe.summary
+                ? recipe.summary
+                : "There is no results for this recipe."
+            }
+        </p>
+        <h2 class="heading-2">Wine Pairing</h2>
+        <p class="recipe__directions-text">
+            ${
+              recipe.wine
+                ? recipe.wine
+                : "There is no wine pairing for this recipe."
+            }
+        </p>
+  </div> 
+  `;
+  elements.shopping.insertAdjacentHTML("afterbegin", markup2);
 };

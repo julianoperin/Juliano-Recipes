@@ -136,7 +136,7 @@ body {
   outline: none;
 }
 
-.btn-tiny {
+/* .btn-tiny {
   height: 1.75rem;
   width: 1.75rem;
   border: none;
@@ -162,7 +162,7 @@ body {
 }
 .btn-tiny:not(:last-child) {
   margin-right: 0.3rem;
-}
+} */
 
 .heading-2 {
   font-size: 1.8rem;
@@ -408,8 +408,6 @@ body {
   position: absolute;
   top: 0;
   left: 0;
-  /* background-image: linear-gradient(to right bottom, #fbdb89, lightskyblue); */
-  opacity: 0.6;
 }
 .recipe__img {
   width: 100%;
