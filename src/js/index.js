@@ -95,34 +95,19 @@ const controlRecipe = async () => {
   }
 };
 
-//! Likes Controller
-const controlLike = () => {
-  if (!state.likes) state.likes = new Likes();
-  const currentID = state.recipe.id;
-  if (!state.likes.isLiked(currentID)) {
-    // Add like to the state
-    const newLike = state.likes.addLike;
-    //Toggle the like button
+// window.addEventListener("hashchange", controlRecipe);
+// window.addEventListener('load', controlRecipe);
+//! Calling two at the same time
+["hashchange", "load"].forEach((e) =>
+  window.addEventListener(e, controlRecipe)
+);
 
-    //Add like to UI list
-  } else {
-    // Remove like from the state
-    // Toggle the like button
-    // Remove like from UI list
+//! Likes controller
+
+// Handling recipe button clicks
+elements.recipe.addEventListener("click", (e) => {
+  if (e.target.matches(".recipe__love, .recipe__love *")) {
+    // Like controller
+    controlLike();
   }
-};
-
-//! Handling the likes button
-elements.recipe
-  .addEventListener("click", (e) => {
-    if (e.target.matches(".recipe__love, .recipe__love *")) {
-      controlLike();
-    }
-  })
-
-  [
-    // window.addEventListener("hashchange", controlRecipe);
-    // window.addEventListener('load', controlRecipe);
-    //! Calling two at the same time
-    ("hashchange", "load")
-  ].forEach((e) => window.addEventListener(e, controlRecipe));
+});
