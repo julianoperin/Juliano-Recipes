@@ -18,7 +18,6 @@ const controlSearch = async () => {
   if (query) {
     // 2) New Search object and add to state
     state.search = new Search(query);
-    console.log(query);
 
     //  3) Prepare Ui for results
     searchView.clearInput();
