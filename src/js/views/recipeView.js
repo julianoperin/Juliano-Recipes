@@ -29,14 +29,18 @@ export const renderRecipe = (recipe, isLiked) => {
     </figure>
     <div class="recipe__details">
         <div class="recipe__info">
-                <img  class="recipe__info-icon" src="./icons/time.png" alt="clock" >
+                <div class="recipe__info-icon"> 
+                  <i class="far fa-clock"></i>
+                </div>
             <span class="recipe__info-data recipe__info-data--minutes">${
               recipe.time
             }</span>
             <span class="recipe__info-text"> minutes</span>
         </div>
         <div class="recipe__info">
-                <img  class="recipe__info-icon" src="./icons/seafood.png" alt="servings" >
+            <div class="recipe__info-icon"> 
+                  <i class="fas fa-utensils"></i>
+            </div>
             <span class="recipe__info-data recipe__info-data--people">${
               recipe.servings
             }</span>
@@ -44,10 +48,10 @@ export const renderRecipe = (recipe, isLiked) => {
         </div>
 
         <div class="recipe__info">
-        <img  class="recipe__info-icon" src="./icons/money.png" alt="servings" >
-
+        <div class="recipe__info-icon"> 
             <i class="fas fa-dollar-sign"></i>
-            <span class="recipe__info-data recipe__info-data--people">&nbsp;${price}</span>
+        </div>
+            <span class="recipe__info-data recipe__info-data--people">${price}</span>
             <span class="recipe__info-text"></span>
         </div>
 
@@ -80,14 +84,7 @@ export const renderRecipe = (recipe, isLiked) => {
             : "There is no results for this recipe."
         }
     </p>
-    <h2 class="heading-2">Wine Pairing</h2>
-    <p class="recipe__directions-text">
-        ${
-          recipe.wine
-            ? recipe.wine
-            : "There is no wine pairing for this recipe."
-        }
-    </p>
+
     <a class="btn-small recipe__btn" href="${recipe.sourceUrl}" target="_blank">
           <span>Check more from ${recipe.sourceName}</span>
       </a>
@@ -101,6 +98,16 @@ export const renderRecipe = (recipe, isLiked) => {
             <ul class="recipe__ingredient-list">
             ${recipe.ingredients.map((el) => createIngredient(el)).join("")}
             </ul>
+        </div>
+        <div class="recipe__ingredients">
+            <h2 class="heading-2">Wine Pairing</h2>
+            <p class="recipe__directions-text">
+                ${
+                  recipe.wine
+                    ? recipe.wine
+                    : "There is no wine pairing for this recipe."
+                }
+            </p>
         </div>
   `;
   elements.shopping.insertAdjacentHTML("afterbegin", markup2);
