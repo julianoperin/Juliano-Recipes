@@ -1,5 +1,5 @@
 import axios from "axios";
-import { KEY } from "../config";
+import { KEYH } from "../config";
 
 export default class Search {
   constructor(id) {
@@ -7,7 +7,7 @@ export default class Search {
   }
 
   async getRecipe() {
-    const URL = `https://api.spoonacular.com/recipes/${this.id}/information?apiKey=${KEY}`;
+    const URL = `https://api.spoonacular.com/recipes/${this.id}/information?apiKey=${KEYH}`;
 
     try {
       const res = await axios(URL);

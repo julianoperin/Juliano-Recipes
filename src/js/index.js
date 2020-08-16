@@ -13,15 +13,15 @@ const state = {};
 
 const controlSearch = async () => {
   // 1) Get the query from the view
-  const query = searchView.getInput();
+
+  let query = searchView.getInput();
 
   if (query) {
     // 2) New Search object and add to state
     state.search = new Search(query);
-
     //  3) Prepare Ui for results
-    searchView.clearInput();
-    searchView.clearResults();
+    searchView.clearInput(); // Clear the search the input
+    searchView.clearResults(); // Clear the search view
     renderLoader(elements.searchRes);
 
     try {
@@ -41,7 +41,6 @@ const controlSearch = async () => {
 elements.searchForm.addEventListener("submit", (e) => {
   e.preventDefault();
   controlSearch();
-  console.log("clicked");
 });
 
 elements.searchResPages.addEventListener("click", (e) => {
@@ -60,9 +59,9 @@ elements.searchResPages.addEventListener("click", (e) => {
 
 //! Recipe Controller
 
-// const r = new Recipe(603414);
-// r.getRecipe();
-// console.log(r);
+const test = new Recipe(603414);
+test.getRecipe();
+console.log(test);
 
 const controlRecipe = async () => {
   //! Every anchor tag displays the hash symbol which is the ID in this case
@@ -96,8 +95,8 @@ const controlRecipe = async () => {
   }
 };
 
-// window.addEventListener("hashchange", controlRecipe);
-// window.addEventListener('load', controlRecipe);
+//! window.addEventListener("hashchange", controlRecipe);
+//! window.addEventListener('load', controlRecipe);
 //! Calling two at the same time
 ["hashchange", "load"].forEach((e) =>
   window.addEventListener(e, controlRecipe)

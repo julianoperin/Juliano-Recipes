@@ -85,7 +85,7 @@ body {
   border-radius: 10rem;
   border: none;
   text-transform: uppercase;
-  color: #fff;
+  color: var(--blacklight-color);
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -130,7 +130,7 @@ body {
 }
 
 .btn-inline {
-  color: var(--white-color-text);
+  color: var(--blacklight-color);
   font-size: 1.2rem;
   border: none;
   background-color: var(--brown-color);
@@ -151,40 +151,11 @@ body {
   margin: 0 0.4rem;
 }
 .btn-inline:hover {
-  color: lightskyblue;
-  background-color: #f2efee;
+  transform: scale(1.05);
 }
 .btn-inline:focus {
   outline: none;
 }
-
-/* .btn-tiny {
-  height: 1.75rem;
-  width: 1.75rem;
-  border: none;
-  background: none;
-  cursor: pointer;
-}
-.btn-tiny svg {
-  height: 100%;
-  width: 100%;
-  fill: lightblue;
-  transition: all 0.3s;
-}
-.btn-tiny:focus {
-  outline: none;
-}
-.btn-tiny:hover svg {
-  fill: lightskyblue;
-  transform: translateY(-1px);
-}
-.btn-tiny:active svg {
-  fill: lightskyblue;
-  transform: translateY(0);
-}
-.btn-tiny:not(:last-child) {
-  margin-right: 0.3rem;
-} */
 
 .heading-2 {
   font-size: 1.8rem;
@@ -218,6 +189,8 @@ body {
 .loader {
   margin: 5rem auto;
   text-align: center;
+  display: flex;
+  justify-content: center;
 }
 .loader svg {
   height: 5.5rem;
@@ -419,10 +392,6 @@ body {
   float: right;
 }
 
-.results__pages button {
-  color: var(--gray-color-text);
-}
-
 .recipe {
   background-color: var(--blacklight-color);
 }
@@ -600,9 +569,9 @@ body {
   color: var(--gray-color-text);
 }
 
-.recipe__by {
+/* .recipe__by {
   font-weight: 700;
-}
+} */
 
 .shopping {
   padding: 0.5rem 2rem;
@@ -740,3 +709,43 @@ footer {
       "shopping";
   }
 } */
+
+/* Animation */
+@-webkit-keyframes loading {
+  to {
+    -webkit-transform: rotate(360deg);
+  }
+}
+@-moz-keyframes loading {
+  to {
+    -moz-transform: rotate(360deg);
+  }
+}
+@-ms-keyframes loading {
+  to {
+    -ms-transform: rotate(360deg);
+  }
+}
+@keyframes loading {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Loader (*/
+#loading {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: transparent;
+
+  border-top: 4px solid #fff;
+  border-right: 4px solid #fff;
+  border-bottom: 4px solid #777;
+  border-left: 4px solid #777;
+
+  -webkit-animation: loading 1.2s infinite linear;
+  -moz-animation: loading 1.2s infinite linear;
+  -ms-animation: loading 1.2s infinite linear;
+  animation: loading 1.2s infinite linear;
+}
