@@ -21,12 +21,12 @@
     <div class="container">
       <header class="header">
         <img src="img/finallogo.png" alt="Logo" class="header__logo" />
-        <!-- <h1 class="header__logo">Juliano & Recipes</h1> -->
         <form class="search">
           <input
             type="text"
             class="search__field"
             placeholder="Search for recipes..."
+            value="pasta"
           />
           <button class="btn search__btn">
             <svg class="search__icon">
@@ -50,6 +50,14 @@
           </div>
         </div>
       </header>
+      <section class="message">
+        <div class="quote-text" id="fade">
+          <h1 id="quote">
+            "Food is symbolic of love when words are inadequate."
+          </h1>
+          <p id="author">- Alan D. Wolfelt</p>
+        </div>
+      </section>
 
       <!--! LEFT SIDE OF THE RESULTS -->
       <div class="results">
@@ -100,9 +108,11 @@
           ></a>
         </li>
         <li>
-          <a href=""><i class="fa fa-linkedin" target="_blank"></i></a>
+          <a href="https://spoonacular.com/" target="_blank"
+            ><i class="fa fa-globe"></i
+          ></a>
         </li>
-        <li>
+        <li class="last-link">
           <a href="https://spoonacular.com/" target="_blank"
             ><i class="fa fa-database"></i
           ></a>

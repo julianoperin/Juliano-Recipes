@@ -56,16 +56,12 @@ body {
   max-width: 100%;
   overflow: hidden;
   display: grid;
-  grid-template-rows: 10rem minmax(100rem, auto);
-  grid-template-columns: 1.1fr 2fr 1.1fr;
-  grid-template-areas: "head head head" "list recipe shopping";
-}
-@media only screen and (max-width: 68.75em) {
-  .container {
-    width: 100%;
-    margin: 0;
-    border-radius: 0;
-  }
+  /* grid-template-rows: 10rem minmax(100rem, auto); */
+  grid-template-columns: 1.1fr 3fr 1.1fr;
+  grid-template-areas:
+    "head head head"
+    "list recipe shopping"
+    "message message message";
 }
 
 .search__btn {
@@ -210,6 +206,7 @@ body {
 }
 
 .header {
+  min-height: 10vh;
   grid-area: head;
   background-color: var(--blacklight-color);
   display: flex;
@@ -217,7 +214,7 @@ body {
   justify-content: space-between;
 }
 .header__logo {
-  margin-left: 4rem;
+  margin-left: 3rem;
   height: 4.5rem;
   display: block;
 }
@@ -579,10 +576,10 @@ body {
   flex-direction: column;
   background: var(--blacklight-color);
 }
-.shopping__list {
+/* .shopping__list {
   list-style: none;
   max-height: 77rem;
-}
+} */
 .shopping__item {
   display: flex;
   align-items: flex-start;
@@ -748,4 +745,141 @@ footer {
   -moz-animation: loading 1.2s infinite linear;
   -ms-animation: loading 1.2s infinite linear;
   animation: loading 1.2s infinite linear;
+}
+
+.message {
+  min-height: 10vh !important;
+  grid-area: message !important;
+  color: var(--gray-color-text);
+  display: block;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 1rem 0;
+  padding: 1rem;
+}
+
+.message h1 {
+  font-family: cursive;
+  font-weight: 300;
+  font-size: 2.2rem;
+}
+.message p {
+  font-size: 1.5rem;
+}
+
+.fade {
+  animation: fading 2s ease-in-out forwards;
+}
+
+@keyframes fading {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@media only screen and (max-width: 714px) {
+  .container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "head"
+      "list"
+      "recipe"
+      "shopping"
+      "message" !important;
+  }
+  .header__logo {
+    margin-left: 1rem;
+    height: 3.5rem;
+  }
+
+  .likes__field {
+    padding: 0 1rem;
+    align-items: left;
+  }
+  .fav {
+    font-size: 1.4rem;
+  }
+  .search__field {
+    font-size: 1.4rem;
+    width: 25rem;
+  }
+}
+
+/* .container {
+  max-width: 100%;
+  overflow: hidden;
+  display: grid;
+  grid-template-rows: 10rem minmax(100rem, auto);
+  grid-template-columns: 1.1fr 3fr 1.1fr;
+  grid-template-areas:
+    "head head head"
+    "list recipe shopping"
+    "message message message";
+} */
+
+@media only screen and (max-width: 532px) {
+  .header {
+    padding: 2rem 2rem 2rem 2rem;
+    min-height: 15vh;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas:
+      "logo likes"
+      "search search";
+  }
+
+  .header__logo {
+    grid-area: logo;
+  }
+
+  .search {
+    grid-area: search;
+    margin: 2rem;
+    margin: auto;
+    width: 80%;
+    position: relative;
+  }
+
+  .likes__field {
+    grid-area: likes;
+    display: block;
+    text-align: right;
+  }
+
+  .search__field {
+    padding: 1.5rem;
+  }
+  .search__btn {
+    position: absolute;
+    right: 0%;
+    top: 0%;
+    border-radius: 10rem;
+    background: var(--brown-color) !important;
+  }
+
+  footer {
+    display: grid;
+    grid-template-columns: 1fr;
+    min-height: 12vh;
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+    background: var(--blacklight-color);
+  }
+  .social-menu ul {
+    order: 1;
+  }
+  .copyright {
+    order: 2;
+    margin: 3rem;
+  }
+  .last-link {
+    display: none;
+  }
 }

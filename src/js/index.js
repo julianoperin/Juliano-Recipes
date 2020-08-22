@@ -6,6 +6,11 @@ import * as searchView from "./views/searchView";
 import * as recipeView from "./views/recipeView";
 import { elements, renderLoader, clearLoader } from "./views/base";
 
+//! On Load
+window.onload = () => {
+  controlSearch();
+};
+
 //! Global State
 const state = {};
 
@@ -13,7 +18,6 @@ const state = {};
 
 const controlSearch = async () => {
   // 1) Get the query from the view
-
   let query = searchView.getInput();
 
   if (query) {
@@ -58,7 +62,6 @@ elements.searchResPages.addEventListener("click", (e) => {
 // search.getResults();
 
 //! Recipe Controller
-
 const test = new Recipe(603414);
 test.getRecipe();
 console.log(test);
@@ -103,7 +106,6 @@ const controlRecipe = async () => {
 );
 
 //! Likes controller
-
 const controlLike = () => {
   if (!state.likes) state.likes = new Likes();
   const currentID = state.recipe.id;
@@ -157,3 +159,76 @@ elements.recipe.addEventListener("click", (e) => {
     controlLike();
   }
 });
+
+//! Quotes Functionality
+let quotes = [
+  {
+    quote: "All happiness depends on a leisurely breakfast.",
+    source: "John Gunther",
+  },
+  {
+    quote: "You don't need a silver fork to eat good food.",
+    source: "Paul Prudhomme",
+  },
+  {
+    quote:
+      "I only drink Champagne on two occasions, when I am in love and when I am not.",
+    source: "Coco Chanel",
+  },
+  {
+    quote: "A balanced diet is a cookie in each hand.",
+    source: "Barbara Johnson",
+  },
+  {
+    quote: "Life is a combination of magic and pasta.",
+    source: "Federico Fellini",
+  },
+  {
+    quote:
+      "One cannot think well, love well, sleep well, if not has not dined well.",
+    source: "Virginia Woolf",
+  },
+  {
+    quote: "First we eat, then we do everything else.",
+    source: "M.F.K. Fisher",
+  },
+  {
+    quote: "I cook with wine. Sometimes I even add it to the food.",
+    source: "W.C. Fields",
+  },
+  {
+    quote: "There is no sincerer love than the love of food.",
+    source: "George Bernard Shaw",
+  },
+  {
+    quote:
+      "A bone to the dog is not charity. Charity is the bone shared with the dog, when you are just as hungry as the dog.",
+    source: "Jack London",
+  },
+];
+
+const quote = document.getElementById("quote");
+const author = document.getElementById("author");
+const fade = document.getElementById("fade");
+
+// event listener
+
+// btn.addEventListener("click", getQuote);
+
+function getQuote() {
+  let number = Math.floor(Math.random() * quotes.length);
+  quote.innerHTML = '<span>"</span>' + quotes[number].quote + '<span>"</span>';
+  author.innerHTML = "<span>-</span>" + quotes[number].source;
+  addFade();
+  setTimeout(removeFade, 3000);
+}
+
+setInterval(getQuote, 10000);
+
+function addFade() {
+  fade.classList.add("fade");
+}
+
+function removeFade() {
+  fade.classList.remove("fade");
+}

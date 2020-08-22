@@ -9,10 +9,10 @@ export default class Search {
   // Simple Search
   // https://api.spoonacular.com/recipes/complexSearch?query=pasta&apiKey=10d488cf49f141da98241c0cf1c12cfc&number=30
 
+  // "https://api.spoonacular.com/recipes/${this.id}/information?apiKey=${KEY}"
+
   async getResults() {
     const URL = `https://api.spoonacular.com/recipes/complexSearch?query=${this.query}&apiKey=${KEYH}&number=30`;
-
-    // "https://api.spoonacular.com/recipes/${this.id}/information?apiKey=${KEY}"
 
     try {
       const res = await axios(URL);
