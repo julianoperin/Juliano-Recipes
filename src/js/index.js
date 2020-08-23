@@ -6,9 +6,12 @@ import * as searchView from "./views/searchView";
 import * as recipeView from "./views/recipeView";
 import { elements, renderLoader, clearLoader } from "./views/base";
 
-//! On Load
+//! On Load run this function
 window.onload = () => {
   controlSearch();
+  window.location.hash = 735437;
+  const id = window.location.hash;
+  setTimeout(controlRecipe, 500);
 };
 
 //! Global State
@@ -62,9 +65,9 @@ elements.searchResPages.addEventListener("click", (e) => {
 // search.getResults();
 
 //! Recipe Controller
-const test = new Recipe(603414);
-test.getRecipe();
-console.log(test);
+// const test = new Recipe(603414);
+// test.getRecipe();
+// console.log(test);
 
 const controlRecipe = async () => {
   //! Every anchor tag displays the hash symbol which is the ID in this case
