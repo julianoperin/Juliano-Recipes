@@ -803,7 +803,7 @@ footer {
     align-items: left;
   }
   .fav {
-    font-size: 1.4rem;
+    font-size: 2rem;
   }
   .search__field {
     font-size: 1.4rem;
@@ -823,7 +823,7 @@ footer {
     "message message message";
 } */
 
-@media only screen and (max-width: 532px) {
+@media only screen and (max-width: 560px) {
   .header {
     padding: 2rem 2rem 2rem 2rem;
     min-height: 15vh;
@@ -840,7 +840,7 @@ footer {
 
   .search {
     grid-area: search;
-    margin: 2rem;
+    margin-top: 3.5rem !important;
     margin: auto;
     width: 80%;
     position: relative;
@@ -857,9 +857,10 @@ footer {
   }
   .search__btn {
     position: absolute;
-    right: 0%;
-    top: 0%;
+    right: -5%;
+    top: -3% !important;
     border-radius: 10rem;
+    padding: 1.4rem 4rem !important;
     background: var(--brown-color) !important;
   }
 
