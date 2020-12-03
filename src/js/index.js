@@ -52,7 +52,6 @@ elements.searchForm.addEventListener("submit", (e) => {
 
 elements.searchResPages.addEventListener("click", (e) => {
   const btn = e.target.closest(".btn-inline");
-  console.log(btn);
   if (btn) {
     const goToPage = parseInt(btn.dataset.goto, 10);
     searchView.clearResults();
@@ -72,7 +71,6 @@ elements.searchResPages.addEventListener("click", (e) => {
 const controlRecipe = async () => {
   //! Every anchor tag displays the hash symbol which is the ID in this case
   const id = window.location.hash.replace("#", "");
-  console.log(id);
   if (id) {
     //! Prepare UI for changes
     recipeView.clearRecipe();
@@ -92,7 +90,7 @@ const controlRecipe = async () => {
       //! Calculate servings and time
 
       //! Render recipe
-      console.log(state.recipe);
+      // console.log(state.recipe);
       clearLoader();
       recipeView.renderRecipe(state.recipe, state.likes.isLiked(id));
     } catch (error) {

@@ -16,7 +16,6 @@ export default class Search {
 
     try {
       const res = await axios(URL);
-      // console.log(res);
       this.result = res.data.results;
       console.log(this.result);
     } catch (error) {
@@ -26,3 +25,9 @@ export default class Search {
 }
 
 // getResults("chicken");
+
+// const uniqueTitles = () => {
+//   const array = [];
+// }
+
+// console.log(this.result);
