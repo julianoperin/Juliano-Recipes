@@ -29,7 +29,12 @@ export const clearLoader = () => {
 };
 
 {
-  /* <svg>
-<use href="img/icons.svg#icon-cw"></use>
-</svg> */
 }
+
+// Date Footer
+const todayDate = document.getElementById("date");
+
+let date = new Date().getFullYear().toString();
+console.log(date);
+
+todayDate.innerText = date;
